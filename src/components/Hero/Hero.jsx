@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import {  AnimatePresence } from 'framer-motion';
+import {  motion, AnimatePresence } from 'framer-motion';
 import { fadeInLeft, fadeInUp, floatingAnimation, glowPulse, staggerContainer } from '../../animations/animationVariants';
 import { socialLinks } from '../../data/projectsData';
 import styles from './Hero.module.css';
