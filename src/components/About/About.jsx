@@ -1,15 +1,35 @@
-import { motion } from 'framer-motion';
-import { useInView } from 'react-intersection-observer';
-import { FaReact, FaJsSquare, FaCubes, FaBolt, FaPlug } from 'react-icons/fa';
-import { fadeInUp, fadeInLeft, fadeInRight, staggerContainer } from '../../animations/animationVariants';
-import styles from './About.module.css';
+import { motion } from "framer-motion";
+import { FaBolt, FaCubes, FaJsSquare, FaPlug, FaReact } from "react-icons/fa";
+import { useInView } from "react-intersection-observer";
+import {
+  fadeInLeft,
+  fadeInUp,
+  staggerContainer,
+} from "../../animations/animationVariants";
+import styles from "./About.module.css";
 
 const coreSkills = [
-  { icon: <FaReact />, name: 'React', desc: 'Component architecture & hooks' },
-  { icon: <FaJsSquare />, name: 'JavaScript ES6+', desc: 'Modern language features' },
-  { icon: <FaCubes />, name: 'Component Architecture', desc: 'Scalable design systems' },
-  { icon: <FaBolt />, name: 'Performance Optimization', desc: 'Rendering & bundle tuning' },
-  { icon: <FaPlug />, name: 'REST API Integration', desc: 'Seamless data layer connectivity' },
+  { icon: <FaReact />, name: "React", desc: "Component architecture & hooks" },
+  {
+    icon: <FaJsSquare />,
+    name: "JavaScript ES6+",
+    desc: "Modern language features",
+  },
+  {
+    icon: <FaCubes />,
+    name: "Component Architecture",
+    desc: "Scalable design systems",
+  },
+  {
+    icon: <FaBolt />,
+    name: "Performance Optimization",
+    desc: "Rendering & bundle tuning",
+  },
+  {
+    icon: <FaPlug />,
+    name: "REST API Integration",
+    desc: "Seamless data layer connectivity",
+  },
 ];
 
 export default function About() {
@@ -22,14 +42,16 @@ export default function About() {
           className={styles.header}
           variants={fadeInUp}
           initial="hidden"
-          animate={inView ? 'visible' : 'hidden'}
+          animate={inView ? "visible" : "hidden"}
         >
           <p className="section-label">About Me</p>
           <h2 className="section-title">
-            Engineering <span className="gradient-text">Full-Stack</span> Systems That Scale
+            Engineering <span className="gradient-text">Full-Stack</span>{" "}
+            Systems That Scale
           </h2>
-          <p className="section-subtitle" style={{ margin: '0 auto' }}>
-            A full stack engineer focused on building robust MERN applications and production-ready UI systems.
+          <p className="section-subtitle" style={{ margin: "0 auto" }}>
+            A full stack engineer focused on building robust MERN applications
+            and production-ready UI systems.
           </p>
         </motion.div>
 
@@ -38,31 +60,46 @@ export default function About() {
             className={styles.textSide}
             variants={fadeInLeft}
             initial="hidden"
-            animate={inView ? 'visible' : 'hidden'}
+            animate={inView ? "visible" : "hidden"}
           >
             <p className={styles.paragraph}>
-              With <span className={styles.highlight}>3+ years of experience</span> in full stack
-              engineering, I specialize in building{' '}
-              <span className={styles.highlight}>scalable MERN applications</span>, reusable UI
-              component systems, and production-ready RESTful API integrations.
+              With{" "}
+              <span className={styles.highlight}>4+ years of experience</span>{" "}
+              in full stack engineering, I specialize in building{" "}
+              <span className={styles.highlight}>
+                scalable MERN applications
+              </span>
+              , reusable UI component systems, and production-ready RESTful API
+              integrations.
             </p>
             <p className={styles.paragraph}>
-              My engineering practice spans{' '}
-              <span className={styles.highlight}>React, Redux Toolkit, Node.js, Express, and MongoDB</span>,
-              with a strong focus on clean architecture, asynchronous execution, and performance
-              optimization across the stack.
+              My engineering practice spans{" "}
+              <span className={styles.highlight}>
+                React, Redux Toolkit, Node.js, Express, and MongoDB
+              </span>
+              , with a strong focus on clean architecture, asynchronous
+              execution, and performance optimization across the stack.
             </p>
 
             <div className={styles.stats}>
-              <motion.div className={styles.statCard} whileHover={{ scale: 1.05 }}>
-                <div className={styles.statNumber}>3+</div>
+              <motion.div
+                className={styles.statCard}
+                whileHover={{ scale: 1.05 }}
+              >
+                <div className={styles.statNumber}>4+</div>
                 <div className={styles.statLabel}>Years Exp</div>
               </motion.div>
-              <motion.div className={styles.statCard} whileHover={{ scale: 1.05 }}>
+              <motion.div
+                className={styles.statCard}
+                whileHover={{ scale: 1.05 }}
+              >
                 <div className={styles.statNumber}>15+</div>
                 <div className={styles.statLabel}>Projects</div>
               </motion.div>
-              <motion.div className={styles.statCard} whileHover={{ scale: 1.05 }}>
+              <motion.div
+                className={styles.statCard}
+                whileHover={{ scale: 1.05 }}
+              >
                 <div className={styles.statNumber}>40%</div>
                 <div className={styles.statLabel}>Perf Gains</div>
               </motion.div>
@@ -73,7 +110,7 @@ export default function About() {
             className={styles.skillsSide}
             variants={staggerContainer}
             initial="hidden"
-            animate={inView ? 'visible' : 'hidden'}
+            animate={inView ? "visible" : "hidden"}
           >
             <p className={styles.skillsSideTitle}>Core Competencies</p>
             {coreSkills.map((skill, i) => (
