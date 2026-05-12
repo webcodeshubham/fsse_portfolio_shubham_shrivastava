@@ -1,11 +1,16 @@
-import { motion } from 'framer-motion';
-import { useInView } from 'react-intersection-observer';
-import { FaGithub, FaExternalLinkAlt, FaCubes, FaChartBar } from 'react-icons/fa';
-import { projects } from '../../data/projectsData';
-import { fadeInUp, staggerContainer } from '../../animations/animationVariants';
-import styles from './Projects.module.css';
+import { motion } from "framer-motion";
+import {
+  FaChartBar,
+  FaCubes,
+  FaExternalLinkAlt,
+  FaGithub,
+} from "react-icons/fa";
+import { useInView } from "react-intersection-observer";
+import { fadeInUp, staggerContainer } from "../../animations/animationVariants";
+import { projects } from "../../data/projectsData";
+import styles from "./Projects.module.css";
 
-const projectIcons = [<FaCubes />, <FaChartBar />, <FaCubes />];
+const projectIcons = [<FaCubes />, <FaChartBar />, <FaCubes />, <FaChartBar />];
 
 export default function Projects() {
   const [ref, inView] = useInView({ triggerOnce: true, threshold: 0.1 });
@@ -17,14 +22,15 @@ export default function Projects() {
           className={styles.header}
           variants={fadeInUp}
           initial="hidden"
-          animate={inView ? 'visible' : 'hidden'}
+          animate={inView ? "visible" : "hidden"}
         >
           <p className="section-label">Featured Work</p>
           <h2 className="section-title">
             Projects I've <span className="gradient-text">Engineered</span>
           </h2>
-          <p className="section-subtitle" style={{ margin: '0 auto' }}>
-            Production-grade applications built with scalable architecture and attention to performance.
+          <p className="section-subtitle" style={{ margin: "0 auto" }}>
+            Production-grade applications built with scalable architecture and
+            attention to performance.
           </p>
         </motion.div>
 
@@ -32,7 +38,7 @@ export default function Projects() {
           className={styles.grid}
           variants={staggerContainer}
           initial="hidden"
-          animate={inView ? 'visible' : 'hidden'}
+          animate={inView ? "visible" : "hidden"}
         >
           {projects.map((project, i) => (
             <motion.div
@@ -63,24 +69,38 @@ export default function Projects() {
 
                 <ul className={styles.features}>
                   {project.features.map((f) => (
-                    <li key={f} className={styles.feature}>{f}</li>
+                    <li key={f} className={styles.feature}>
+                      {f}
+                    </li>
                   ))}
                 </ul>
 
                 <div className={styles.techStack}>
                   {project.tech.map((t) => (
-                    <span key={t} className={styles.techBadge}>{t}</span>
+                    <span key={t} className={styles.techBadge}>
+                      {t}
+                    </span>
                   ))}
                 </div>
 
                 <div className={styles.cardFooter}>
                   <div className={styles.cardLinks}>
                     {project.github && (
-                      <a href={project.github} target="_blank" rel="noreferrer" className={styles.cardLink}>
+                      <a
+                        href={project.github}
+                        target="_blank"
+                        rel="noreferrer"
+                        className={styles.cardLink}
+                      >
                         <FaGithub /> GitHub
                       </a>
                     )}
-                    <a href={project.live} target="_blank" rel="noreferrer" className={styles.cardLink}>
+                    <a
+                      href={project.live}
+                      target="_blank"
+                      rel="noreferrer"
+                      className={styles.cardLink}
+                    >
                       <FaExternalLinkAlt /> Live Demo
                     </a>
                   </div>

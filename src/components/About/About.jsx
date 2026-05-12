@@ -9,26 +9,30 @@ import {
 import styles from "./About.module.css";
 
 const coreSkills = [
-  { icon: <FaReact />, name: "React", desc: "Component architecture & hooks" },
+  {
+    icon: <FaReact />,
+    name: "React & Next.js",
+    desc: "Component architecture, hooks & SSR",
+  },
   {
     icon: <FaJsSquare />,
-    name: "JavaScript ES6+",
-    desc: "Modern language features",
+    name: "Node.js & Express.js",
+    desc: "REST APIs, middleware & auth",
   },
   {
     icon: <FaCubes />,
-    name: "Component Architecture",
-    desc: "Scalable design systems",
+    name: "MongoDB & Mongoose",
+    desc: "Schema design & data modeling",
   },
   {
     icon: <FaBolt />,
-    name: "Performance Optimization",
-    desc: "Rendering & bundle tuning",
+    name: "JWT & Role-Based Access",
+    desc: "Authentication & authorization",
   },
   {
     icon: <FaPlug />,
-    name: "REST API Integration",
-    desc: "Seamless data layer connectivity",
+    name: "Full Stack Integration",
+    desc: "End-to-end MERN data flows",
   },
 ];
 

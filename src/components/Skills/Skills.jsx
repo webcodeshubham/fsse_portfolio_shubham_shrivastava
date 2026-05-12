@@ -1,28 +1,24 @@
-import { motion } from 'framer-motion';
-import { useInView } from 'react-intersection-observer';
+import { motion } from "framer-motion";
 import {
+  FaCloudUploadAlt,
   FaCode,
-  FaServer,
+  FaCogs,
   FaDatabase,
   FaProjectDiagram,
-  FaTools,
-  FaCloudUploadAlt,
-  FaCogs,
-  FaLightbulb,
-} from 'react-icons/fa';
-import { skills } from '../../data/projectsData';
-import { fadeInUp, staggerContainer } from '../../animations/animationVariants';
-import styles from './Skills.module.css';
+  FaServer,
+} from "react-icons/fa";
+import { useInView } from "react-intersection-observer";
+import { fadeInUp, staggerContainer } from "../../animations/animationVariants";
+import { skills } from "../../data/projectsData";
+import styles from "./Skills.module.css";
 
 const categoryIcons = {
-  'Frontend Engineering': <FaCode />,
-  'Backend Engineering': <FaServer />,
-  'Database & ORM': <FaDatabase />,
-  'State & Data Handling': <FaProjectDiagram />,
-  'Tooling & Workflow': <FaTools />,
-  'Deployment & Hosting': <FaCloudUploadAlt />,
-  'Engineering Fundamentals': <FaCogs />,
-  'Emerging Technologies': <FaLightbulb />,
+  "Frontend Engineering": <FaCode />,
+  "Backend Engineering": <FaServer />,
+  "Database & ORM": <FaDatabase />,
+  "State & Data Handling": <FaProjectDiagram />,
+  "Deployment & Tools": <FaCloudUploadAlt />,
+  "Engineering Fundamentals": <FaCogs />,
 };
 
 function SkillBar({ skill, inView, delay }) {
@@ -54,14 +50,15 @@ export default function Skills() {
           className={styles.header}
           variants={fadeInUp}
           initial="hidden"
-          animate={inView ? 'visible' : 'hidden'}
+          animate={inView ? "visible" : "hidden"}
         >
           <p className="section-label">Expertise</p>
           <h2 className="section-title">
             Technical <span className="gradient-text">Proficiency</span>
           </h2>
-          <p className="section-subtitle" style={{ margin: '0 auto' }}>
-            A comprehensive overview of the technologies and methodologies I work with daily.
+          <p className="section-subtitle" style={{ margin: "0 auto" }}>
+            A comprehensive overview of the technologies and methodologies I
+            work with daily.
           </p>
         </motion.div>
 
@@ -69,7 +66,7 @@ export default function Skills() {
           className={styles.categories}
           variants={staggerContainer}
           initial="hidden"
-          animate={inView ? 'visible' : 'hidden'}
+          animate={inView ? "visible" : "hidden"}
         >
           {Object.entries(skills).map(([category, items], ci) => (
             <motion.div
@@ -79,7 +76,9 @@ export default function Skills() {
               custom={ci}
             >
               <h3 className={styles.categoryTitle}>
-                <span className={styles.categoryIcon}>{categoryIcons[category]}</span>
+                <span className={styles.categoryIcon}>
+                  {categoryIcons[category]}
+                </span>
                 {category}
               </h3>
               <div className={styles.skillItems}>
